@@ -8,6 +8,7 @@
 
 ## Tech stack
 - React
+- TypeScript
 - styled-components
 - webpack
 
