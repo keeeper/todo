@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const ListItem = styled.li`
+type Props = {
+  done: boolean
+}
+
+const ListItem = styled.li<Props>`
   display: flex;
   align-items: center;
   margin-bottom: 2rem;

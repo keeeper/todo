@@ -5,7 +5,8 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   // mode: "development",
-  entry: ["@babel/polyfill", "./src/index.jsx"],
+  entry: ["@babel/polyfill", "./src/index.tsx"],
+  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: '[name].[contenthash].js',
@@ -19,7 +20,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.tsx', '.ts']
   },
 
   plugins: [
@@ -61,6 +62,20 @@ module.exports = {
           options: {
             presets: ["@babel/preset-env", "@babel/preset-react"]
           }
+        }
+      },
+      {  
+        test: /\.m?ts$/,
+        exclude: /node_modules/,
+        use: { 
+          loader: "ts-loader",
+        }
+      },
+      {  
+        test: /\.m?tsx$/,
+        exclude: /node_modules/,
+        use: { 
+          loader: "ts-loader",
         }
       }
     ]

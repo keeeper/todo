@@ -1,7 +1,15 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyles = createGlobalStyle`
-  
+type Props = {
+    theme: {
+      colors: {
+        background: string,
+        text: string
+      }
+    }
+}
+
+const GlobalStyles = createGlobalStyle<Props>`
   html, body {
     font-size: 8px;
     font-family: "Roboto", "Arial", sans-serif;

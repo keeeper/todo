@@ -7,8 +7,8 @@ const ButtonSend = styled.button`
   top: 1.7rem;
   right: 1rem;
   cursor: pointer;
-  opacity: ${(props) => props.inputValue ? 1 : 0.3 };
-  pointer-events: ${(props) => props.inputValue ? "auto" : "none" };
+  opacity: ${(props) => props.disabled ? 0.3 : 1 };
+  pointer-events: ${(props) => props.disabled ?  "none" : "auto" };
   fill: ${(props) => props.theme.colors.primary};
   transition: all 0.2s;
   
