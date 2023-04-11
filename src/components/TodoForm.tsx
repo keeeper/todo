@@ -1,4 +1,5 @@
-import React, {FC, ChangeEvent} from "react";
+import * as React from 'react';
+import {FC, ChangeEvent} from "react";
 import { ReactSVG } from "react-svg";
 import Input from './styles/Input.styled';
 import ButtonSend from './styles/ButtonSend.styled';

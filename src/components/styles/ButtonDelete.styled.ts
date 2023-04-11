@@ -8,10 +8,10 @@ const ButtonDelete = styled.button`
   height: 4rem;
   cursor: pointer;
   transition: fill 0.2s;
-  fill: ${(props) => props.theme.colors.secondary};
+  fill: ${(props) => props.theme.colors?.secondary};
 
   &:hover {
-    fill: ${(props) => props.theme.colors.accent};
+    fill: ${(props) => props.theme.colors?.accent};
   }
 `;
 

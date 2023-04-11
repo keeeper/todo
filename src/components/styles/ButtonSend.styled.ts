@@ -9,11 +9,11 @@ const ButtonSend = styled.button`
   cursor: pointer;
   opacity: ${(props) => props.disabled ? 0.3 : 1 };
   pointer-events: ${(props) => props.disabled ?  "none" : "auto" };
-  fill: ${(props) => props.theme.colors.primary};
+  fill: ${(props) => props.theme.colors?.primary};
   transition: all 0.2s;
   
   &:hover {
-    fill: ${(props) => props.theme.colors.accent};
+    fill: ${(props) => props.theme.colors?.accent};
   }
 `;
 
