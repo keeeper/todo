@@ -1,0 +1,21 @@
+name: GitHub Actions ToDo
+on: [push]
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Starting Node.js ${{ matrix.node-version}}
+        uses: actions/setup-node@v3
+        with: 
+          node-version: ${{ matrix.node-version}}
+          token: ${{ secrets.PAT }}
+      - name: install modules
+        run: npm install
+      - name: run tests
+        run: npm run test
+      - name: build project
+        run: npm run prod
