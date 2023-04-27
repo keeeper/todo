@@ -1,4 +1,5 @@
 # Quick and simple todo app
+Title is pretty self explanatory, it is a quick and simple ToDo application created with React, Typescript, styled-components as a self-exercise.
 
 ## Features
 - add / remove goals
@@ -11,4 +12,3 @@
 - TypeScript
 - styled-components
 - webpack
-
