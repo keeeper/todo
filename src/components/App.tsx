@@ -14,18 +14,17 @@ const App:FC = () => {
   const [todoList, updateTodoList] = useState<ITodoItem[]>([]);
   const [inputValue, updateFormValue] = useState('');
   const [lightTheme, updateTheme] = useState(true);
-  const componentDidUpdate = useRef(false);
 
   useEffect(()=> {
-    if (componentDidUpdate.current) {
-      Todos.saveToLocalStorage(todoList);
-    } else {
-      if (Todos.loadTodoList() != null) {
-        const loadedAndFilteredTodos = Todos.loadFromLocalStorageAndFilter()
-        updateTodoList(loadedAndFilteredTodos);
-      }
-      componentDidUpdate.current = true;
-    }
+    if (Todos.loadTodoList() != null) {
+      const loadedAndFilteredTodos = Todos.loadFromLocalStorageAndFilter()
+      updateTodoList(loadedAndFilteredTodos);
+    } 
+  }, []);
+
+  useEffect(()=>{
+    Todos.saveToLocalStorage(todoList);
+    console.log(todoList)
   }, [todoList]);
 
   const formInputHandler = (event: ChangeEvent<HTMLInputElement>):void => {
