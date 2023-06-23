@@ -24,7 +24,6 @@ const App:FC = () => {
 
   useEffect(()=>{
     Todos.saveToLocalStorage(todoList);
-    console.log(todoList)
   }, [todoList]);
 
   const formInputHandler = (event: ChangeEvent<HTMLInputElement>):void => {
